@@ -16,6 +16,7 @@ int main()
     mostrarMatriz(prodA);
     printf("\n");
     promedio(prodA);
+    maxMin(prodA);
     return 0;
 }
 
@@ -66,7 +67,7 @@ void maxMin(int matriz[][MESES])
 
     for(int i=0; i<ANIO; i++)
     {
-        for(int j=0; j<MESES; j+=2)
+        for(int j=0; j<MESES; j++)
         {
             if(max < matriz[i][j])
             {
@@ -81,5 +82,7 @@ void maxMin(int matriz[][MESES])
                 indMin[1] = j;
             }
         }
-    } 
+    }
+    printf("mayor produccion:\n\tanio: %d\n\tmes: %d\n\n", indMax[0]+1, indMax[1]+1);
+    printf("menor produccion:\n\tanio: %d\n\tmes: %d\n", indMin[0]+1, indMin[1]+1);
 }
